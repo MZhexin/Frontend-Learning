@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 7</title>
+</head>
+<body>
+    <script>
+        // for循环
+        var arr = [0, 1, 2, 3, 4];
+        for (let i = 0; i < arr.length; i++)
+        {
+            document.write(arr[i] + "<br>");
+        }
+
+        // 遍历
+        var person = {
+            name: '世界第一大帅哥',
+            age: '114514',
+            gender: '武装直升机'
+        };
+
+        for (var info in person)  // 用 for in 遍历对象属性
+        {
+            document.write('<p>' + info + ': ' + person[info] + '</p>');
+        }
+
+        var arr2 = [1, 2, 3, 4, 5];
+
+        for (var value of arr2)   // 用 for of 遍历对象属性值
+        {
+            document.write(value + "<br>");
+        }
+    </script>
+</body>
+</html>

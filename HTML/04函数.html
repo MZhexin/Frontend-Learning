@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 4</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 函数
+        // 无参函数
+        function func1(){
+            console.log('Hello, world!');
+        }
+
+        // 带参数的函数
+        function func2(name){
+            return 'My name is ' + name;
+        }
+
+        // 函数也可以作为参数传递
+        function func3(func, name){
+            return func(name);
+        }
+
+        var result = func3(func2, '世界第一大帅哥');
+        console.log(result);
+
+        // 注：一个函数只能有一个返回值，若要返回多个值则，则可以将值放入一个数组中，然后返回这个数组
+
+        // 函数的定义方式（2种：函数声明和函数表达式）
+        // 1）函数声明：函数定义在代码的任何位置，可以直接调用
+        function getSum(num1, num2) {
+            var total = num1 + num2;
+            return total;
+        }
+        // 2）函数表达式：函数定义在代码块中，不能直接调用，需要将函数赋值给一个变量，才能调用
+        var getSum = function(num1, num2) {
+            var total = num1 + num2;
+            return total;
+        };
+
+    </script>
+</body>
+</html>

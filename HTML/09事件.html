@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 9</title>
+</head>
+<body>
+    <!-- onclick事件表示单击按钮，此处连接到MyFunction()函数上 -->
+    <button type="button" onclick="MyFunction()">你好</button>
+
+    <!-- 也可以通过id绑定到事件处理函数 -->
+    <button type="button" id="myButton">Hello</button>
+    
+    <script type="text/javascript">
+        function MyFunction()
+        {
+            window.alert('Hello World!');
+        }
+
+        function MyFunction2()
+        {
+            window.alert('你好，世界!');
+        }
+
+        document.getElementById("myButton").onclick = MyFunction2; // 通过id绑定到事件处理函数
+    </script>
+</body>
+</html>

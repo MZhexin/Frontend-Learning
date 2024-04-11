@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 3</title>
+</head>
+<body>
+    <script>
+        var x = 5;          // 定义变量
+        let y = 10;         // 定义局部变量
+        const z = 15;       // 定义常量
+        
+        // 在控制台输出结果（通过开发者工具来看）
+        console.log('x = ' + x);
+        console.log('y = ' + y);
+        console.log('z = ' + z);
+
+        var num;
+        console.log('num = ', num);  // 输出undefined
+        // Undefined 也是一个只有一个值的特殊数据类型，表示未定义。当我们声明一个变量但未给变量赋值时，这个变量的默认值就是 Undefined
+
+
+        var a = '123';
+        var sym1 = Symbol(a);
+        var sym2 = Symbol(a);
+        console.log(sym1 == sym2);  // 输出 false
+        // Symbol 是 ECMAScript6 中引入的一种新的数据类型，表示独一无二的值，Symbol 类型的值需要使用 Symbol() 函数来生成
+        //虽然 sym1 与 sym2 看起来是相同的，但实际上它们并不一样，根据 Symbol 类型的特点，sym1 和 sym2 都是独一无二的
+
+        // Object类型变量，键值对形式，key都是字符串，value可以是任意类型
+        var obj = {
+            name: '世界第一大帅哥',
+            age: 114514,
+            hobby: ['唱', '跳', 'RAP', '篮球']  // 数组类型，Array
+        }
+
+        // Array数组变量
+        var arr1 = [1, 'hello', '2.0']
+        var arr2 = new Array(1, 2, 3, 4)  // 用构造函数的方法创建数组
+        console.log(arr1[0])  // 通过索引访问数组元素
+        console.log(arr1[3])  // 数组越界，返回undefined
+        console.log(arr1.length)  // 获取数组长度
+
+        // delete 可以删除属性或数组元素
+        delete obj.age;     // 删除age属性
+        delete arr1[1];     // 删除数组元素
+
+    </script>
+</body>
+</html>

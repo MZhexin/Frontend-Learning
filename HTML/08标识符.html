@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 8</title>
+</head>
+<body>
+    <script>
+        outloop:        // 标识符名称 + 冒号，表示循环语句块的开始，用于跳出指定循环
+        for (var i=0; i<10; i++)
+        {
+            document.write('外层循环: ' + i + '<br>');
+
+            innerloop:
+
+            for(var j=0; j<5; j++)
+            {
+                if(j > 1) break;
+                if(i == 2) break innerloop;
+                if(i == 3) break outloop;
+            }
+            document.write("内层循环: " + j + " <br />");
+        }
+        document.write("循环结束");
+    </script>
+</body>
+</html>
