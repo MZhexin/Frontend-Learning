@@ -10,6 +10,9 @@
 
     <!-- 也可以通过id绑定到事件处理函数 -->
     <button type="button" id="myButton">Hello</button>
+
+    <!-- 表单可以通过onfocus绑定到事件处理函数 -->
+    <input type="text" onfocus="myFunction3()" /> 
     
     <script type="text/javascript">
         function MyFunction()
@@ -23,6 +26,22 @@
         }
 
         document.getElementById("myButton").onclick = MyFunction2; // 通过id绑定到事件处理函数
+
+        // addEventListener()方法可以绑定到全局事件处理函数，监听事件发生时执行相应的函数
+        var i = 0;
+        document.addEventListener('click', function(){console.log(i++);});  // 监听全局的click事件时执行函数，打印i++的值
+
+
+        // 文档事件：  window.某个事件 = function(){执行的代码}
+        // HTML代码被渲染完毕后会触发事件
+        window.onload = function(){console.log('文档加载完成');};            
+        
+        // 被绑定的表单事件处理函数
+        function myFunction3()
+        {
+            console.log('输入框获得焦点');
+        }   
+
     </script>
 </body>
 </html>

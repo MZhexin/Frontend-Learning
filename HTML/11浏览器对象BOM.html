@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 11</title>
+</head>
+<body>
+    <!-- 浏览器对象  Browser Object Model（BOM）-->
+    <!-- 仅定时器写了实例，其他都没有绑定到按钮上 -->
+    
+    <button id="B1">
+        点击我
+    </button>
+
+    <script>
+        // 1）定时器
+        var t1 = setTimeout(function(){
+            console.log('延迟3秒后执行')
+            console.log(1);
+        }, 3000)    // 3秒后执行（默认单位是毫秒）
+
+        button1 = document.getElementById('B1');
+        button1.addEventListener('click', function(){
+            t1;
+            console.log('点击事件触发');
+        });
+
+
+        // 2）取消定时器
+        cleartimeout(t1);
+
+
+        // 3）循环计时器
+        var t2 = setInterval(function(){
+            console.log('每隔1秒执行一次');
+            console.log(2);
+        }, 1000)    // 每隔1秒执行一次
+
+
+        // 4）取消循环计时器
+        clearInterval(t2);
+
+        
+        // 5) 本地化存储（即浏览器缓存）
+        localStorage.setItem('name', 'xiaoming')    // 设置缓存
+        localStorage.getItem('name')                // 读取缓存
+        localStorage.removeItem('name')             // 删除缓存
+
+
+        // 6)
+    </script>
+</body>
+</html>
