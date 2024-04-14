@@ -9,37 +9,47 @@
     <!-- 仅定时器写了实例，其他都没有绑定到按钮上 -->
     
     <button id="B1">
-        点击我
+        按钮1
+    </button>
+
+    <button id="B2">
+        按钮2
     </button>
 
     <script>
         // 1）定时器
-        var t1 = setTimeout(function(){
-            console.log('延迟3秒后执行')
-            console.log(1);
-        }, 3000)    // 3秒后执行（默认单位是毫秒）
-
         button1 = document.getElementById('B1');
         button1.addEventListener('click', function(){
-            t1;
-            console.log('点击事件触发');
+            console.log('点击事件触发定时器');
+            setTimeout(function(){
+                console.log('延迟3秒后执行')
+                console.log(1);
+            }, 3000)    // 3秒后执行（默认单位是毫秒）
         });
 
 
         // 2）取消定时器
-        cleartimeout(t1);
+        function clear1(){
+            cleartimeout(t1);
+        }
 
 
         // 3）循环计时器
-        var t2 = setInterval(function(){
-            console.log('每隔1秒执行一次');
-            console.log(2);
-        }, 1000)    // 每隔1秒执行一次
+        button2 = document.getElementById('B2');
+        button2.addEventListener('click', function(){
+            console.log('点击事件触发循环计时器');
+            setInterval(function(){
+                console.log('每隔1秒执行一次');
+                console.log(2);
+            }, 1000)    // 每隔1秒执行一次
+        });
 
 
         // 4）取消循环计时器
-        clearInterval(t2);
-
+        function clear2(){
+            clearInterval(t2);
+        }
+        
         
         // 5) 本地化存储（即浏览器缓存）
         localStorage.setItem('name', 'xiaoming')    // 设置缓存
@@ -47,7 +57,42 @@
         localStorage.removeItem('name')             // 删除缓存
 
 
-        // 6)
+        // 6) location对象
+        var url = location.href;    // 获取当前页面的URL
+        var host = location.host;   // 获取当前页面的域名
+        var port = location.port;   // 获取当前页面的端口号
+        var portocol = location.protocol;   // 获取当前页面的协议
+
+        // 打印
+        console.log('url: ', url);
+        console.log('host: ', host);
+        console.log('port: ', port);
+        console.log('portocol: ', portocol);
+
+
+        // 7) navigator对象：表示当前浏览器的信息和状态
+        var app = navigator.appName
+        var os = navigator.platform
+        var language = navigator.language
+
+        // 打印
+        console.log('App Name: ', app);    // 获取浏览器名称
+        console.log('Operation System:', os);     // 获取操作系统名称
+        console.log('Language: ', language);    // 获取浏览器语言
+
+        // navigator对象也可以直接在console.log中打印
+        console.log(navigator.cookieEnabled);    // 是否启用了cookie
+
+
+        // 8) screen对象：表示屏幕的信息
+        var width = screen.width;    // 获取屏幕的宽度
+        var height = screen.height;  // 获取屏幕的高度
+
+        // 打印
+        console.log('Screen Width: ', width);
+        console.log('Screen Height: ', height);
+
+        
     </script>
 </body>
 </html>
