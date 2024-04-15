@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 12</title>
+</head>
+<body>
+    <script>
+        // 类主要包含静态属性、静态方法、实例属性、实例方法
+        // 类的命名必须以大写字母开头
+
+        // 定义类的构造函数
+        function Person(){};
+
+        // 1) 静态属性
+        Person.name = "世界第一大帅哥";
+
+        // 2) 静态方法
+        Person.func1 = function(){
+            console.log("Hello World!")
+        };
+
+        // 3) 实例属性
+        Person.prototype.age = 114514;
+
+        // 4) 实例方法
+        Person.prototype.func2 = function(){
+            console.log("你好，世界！");
+        };
+
+        // 使用new关键字实例化对象
+        // 继承了实例属性和实例方法
+        var Jack = new Person();
+
+        // 打印
+        console.log(Jack.name);         // 输出undifined
+        // Jack.func1();                // 报错，显示没有这个函数
+        console.log(Jack.age);          // 输出 114514
+        Jack.func2();                   // 输出 "你好，世界！"
+
+        // 用class关键字定义类
+        // 每个类中包含了一个特殊的方法constructor()，它是类的构造函数，这种方法用于创建和初始化一个由class创建的对象
+        // static关键字定义静态属性和静态方法，这些方法与实例化无关，因此不用放在constructor里面
+        class Student{
+            static title = "世界第一大帅哥";
+            static func1(){
+                console.log("我是一个学生");
+            }
+            constructor(){
+                this.name = "小明";
+                this.age = 18;
+            }
+        }
+
+        // 调用静态方法，只要通过类名调用即可，无需实例化
+        Student.func1();    // 输出 "我是一个学生"
+
+        // 调用实例方法就必须实例化对象
+        var student1 = new Student();
+        console.log(student1.name);    // 输出 "小明"
+        console.log(student1.age);     // 输出 18
+
+    </script>
+</body>
+</html>

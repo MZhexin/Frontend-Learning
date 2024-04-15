@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 13</title>
+</head>
+<body>
+    <script>
+        // 1) 普通函数：this指向调用者
+        function func1() {
+            console.log(this)
+        }
+
+        class Person{
+            static func2(){
+                console.log(this)
+            }
+        }
+
+        func1()          // window
+        Person.func2()   // Person
+
+
+        // 2) 箭头函数：this指向定义时所在的作用域（箭头函数没有自己的this）
+        const person = {
+            func3: () => {
+                console.log(this)
+            }
+        }
+
+        person.func3() // window
+
+
+        // 3) 通过call()、apply()、bind()三种函数可以改变this指向 (示例略)
+        
+    </script>
+</body>
+</html>

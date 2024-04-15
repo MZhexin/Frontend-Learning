@@ -39,6 +39,31 @@
             return total;
         };
 
+
+        // 箭头函数：简洁、方便
+        // 通常用来替代传统的匿名函数表达式，用于传递简单的回调函数
+        
+        /*
+            1)  多个参数或没有参数时
+                语法：(参数1, 参数2, ...) => 表达式或语句块
+                (param1, param2) => expression
+
+            2)  如果只有一个参数，可以省略括号
+                语法：参数 => 表达式或语句块
+                param => expression
+
+        */
+        // 一个参数的箭头函数
+        const square = num => num * num;
+
+        // 没有参数的箭头函数
+        const sayHello = () => console.log("Hello!");
+
+        // 多个参数的箭头函数
+        const add = (a, b) => {
+        return a + b; // 如果函数体有多条语句，需要用大括号包裹，并且需要显式返回值
+        };
+
     </script>
 </body>
 </html>
