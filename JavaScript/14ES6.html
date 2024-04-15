@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Learning 14</title>
+</head>
+<body>
+    <script>
+        // 1) 解构赋值
+        const [a, b, c] = [1, 2, 3];
+        const { name, age } = { name: 'xiaoming', age: 18 };
+
+        console.log(a, b, c);
+        console.log(name, age);
+
+        // 2) 扩展运算符：是一个三个点（...）的语法
+        // 用于将一个可迭代对象（如数组或者字符串）展开为零个或多个参数/元素
+
+        // 例一：合并数组
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const mergedArr = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+        console.log(mergedArr);
+
+        // 例二：合并对象
+        const obj1 = { a: 1, b: 2 };
+        const obj2 = { c: 3, d: 4 };
+        const mergedObj = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3, d: 4}
+        console.log(mergedObj);
+
+        // 3) 字符串模板：字符串拼接
+        const myname = 'xiaoming';
+        const res = 'I am ${myname}.';
+
+        // 
+    </script>
+</body>
+</html>
