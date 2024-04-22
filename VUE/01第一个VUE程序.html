@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01第一个VUE程序</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <!-- 开发环境版本，包含完整的警告和调试模式 -->
+    <!-- 从CDN（Content Delivery Network，内容分发网络）中导入VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // Vue实例需要el属性和data属性
+        var app = new Vue({
+            el: '#app',  // 通过CSS中的id选择器（#符号），将Vue实例绑定到id为app的div上
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
+</body>
+</html>
