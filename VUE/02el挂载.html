@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02el挂载</title>
+</head>
+<body>
+    <!-- message不在任何id为app的标签中，所以不会被替换成data中的message -->
+    {{ message }}
+    <div id="app" class="app">
+        <!-- message在id为app的div中，可以被替换成data中的message -->
+        {{ message }}        
+        <span>
+            <!-- message所在的span标签嵌套在id为app的div中，也可以被替换成data中的message -->
+            {{ message }}
+        </span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // vue会管理el选项命中的元素及其后代元素
+        // 一般来说，el最好还是用id选择器挂载到div标签上（因为p、span等标签都有自己独特的样式）
+        var app = new Vue({
+            el: '#app',         // id选择器（推荐）
+            // el: '.app',      // class选择器（不推荐）
+            // el: "div",       // 标签选择器（不推荐）
+            data: {
+                message: "Hello Vue!"
+            }
+        })
+    </script>
+    <!-- el不能挂载到body、html等标签上，否则会导致页面渲染出错 -->
+</body>
+</html>
