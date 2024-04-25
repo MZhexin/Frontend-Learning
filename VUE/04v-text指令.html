@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04v-text指令</title>
+</head>
+<body>
+    <!-- v-text指令的作用是设置标签的内容（textContent） -->
+    <div id="app">
+        <!-- 这样写，会把message中的所有内容都替换到<h2>标签中 -->
+        <h2 v-text="message"></h2>
+
+        <!-- 更推荐的写法是用两个括号，适合带有逻辑运算的写法 -->
+        <h2>世界，{{ message }}</h2>
+
+        <!-- v-text指令支持表达式的写法 -->
+        <h2 v-text="message + '!'"></h2>
+        <h2>世界，{{ message + '！'}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                message: '你好'
+            }
+        })
+    </script>
+</body>
+</html>

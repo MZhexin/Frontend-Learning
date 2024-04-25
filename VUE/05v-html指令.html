@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05v-html指令</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 如果content的内容是普通文本，则v-text和v-html效果相同 -->
+        <p v-text="content1"></p>
+        <p v-html="content1"></p>
+
+        <!-- 如果content的内容是HTML代码，则v-text会将其作为纯文本显示，v-html则会将其作为HTML代码显示 -->
+        <p v-text="content2"></p>
+        <p v-html="content2"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                content1: '你好',
+                content2: "<a href='https://www.baidu.com'>百度</a>"
+            }
+        })
+    </script>
+</body>
+</html>
