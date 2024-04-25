@@ -14,7 +14,7 @@
     
     <script type="text/JavaScript">
         // 1)使用 alert() 函数来弹出提示框
-        window.alert("这是弹出框");         // window.alert() 比 alert() 更常用且更严谨
+        window.alert('这是弹出框');         // window.alert() 比 alert() 更常用且更严谨
         
         // 2)使用 confirm() 函数来弹出对话框（包含确认和取消按钮，点击后分别返回true和false）
         var res = window.confirm('你是世界第一大帅哥吗？')
@@ -28,11 +28,11 @@
         }
 
         // 3) innerHTML 是一个属性而不是一个函数，通过它可以设置或者获取指定 HTML 标签中的内容
-        var demo1 = document.getElementById("demo1");    // document.getElementById() 用于获取指定 id 的元素
-        var demo2 = document.getElementById("demo2");
+        var demo1 = document.getElementById('demo1');    // document.getElementById() 用于获取指定 id 的元素
+        var demo2 = document.getElementById('demo2');
 
         console.log(demo1.innerHTML);           // 通过 innerHTML 属性获取元素内容 （读取）
-        demo2.innerHTML = "Hello World!";       // 通过 innerHTML 属性设置元素内容 （赋值）
+        demo2.innerHTML = 'Hello World!';       // 通过 innerHTML 属性设置元素内容 （赋值）
     </script>
 </body>
 </html>

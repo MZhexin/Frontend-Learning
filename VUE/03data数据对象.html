@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03data数据对象</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+
+        <!-- 通过.元素访问school中的name元素 -->
+        <h2>{{ school.name }}</h2>
+
+        <!-- 通过索引访问数据 -->
+        <ul>
+            <li>{{ college[0] }}</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+
+            // vue中的数据定义在data中
+            // data中可以写复杂类型的数据（比如object和array）
+            // 渲染复杂类型的数据时，遵循js的语法即可
+            data: {
+                message: '你好！',
+                school: {
+                    name: '北京工业大学',
+                    level: '211'
+                },
+                college: ['信息学部', '城建学部', '文法学部', 'Others']
+            }
+        })
+    </script>
+</body>
+</html>
