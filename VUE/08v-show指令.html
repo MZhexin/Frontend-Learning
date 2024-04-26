@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08v-show指令</title>
+</head>
+<body>
+    <!-- v-show指令：根据表达值的真假，切换元素的显示和隐藏 -->
+    <!-- 原理是修改元素的display，以实现显示和隐藏 -->
+    <!-- v-show还可以写成表达式： e.g. v-show="age>=18"  其实这些值最终都会被处理成布尔型 -->
+    <div id="app">
+        <input type="button" value="切换显示状态" @click="changeShow">
+        <img src="King.jpg" v-show="isShow">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                isShow: false,  // True是显示，False是隐藏
+                age: 16
+            },
+            methods:{
+                changeShow: function(){
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+</html>

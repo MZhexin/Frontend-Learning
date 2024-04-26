@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07实践-计数器</title>
+</head>
+<style>
+    .input-num button{
+        width: 150px;
+        height: 100%;
+        font-size: 40px;
+        color: #ad2a27;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .input-num span{
+        height: 100%;
+        font-size: 40px;
+        flex: 1;
+        text-align: center;
+        line-height: 80px;
+        font-family: auto;
+        background-color: white;
+    }
+</style>
+<body>
+    <div class="input-num" id="app">
+        <button @click="addCount">+</button>
+        <span>{{ count }}</span>
+        <button @click="subCount">-</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods:{
+                addCount: function(){
+                    if (this.count < 10){
+                        this.count += 1
+                    }
+                    else{
+                        alert('不能再加了')
+                    }
+                },
+                subCount: function(){
+                    if (this.count >0){
+                        this.count -= 1
+                    }
+                    else{
+                        alert('不能再减了')
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
