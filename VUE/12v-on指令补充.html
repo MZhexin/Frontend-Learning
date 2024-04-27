@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12v-on指令补充</title>
+</head>
+<body>
+    <!-- v-on也可以传递自定义参数和事件修饰符 -->
+
+    <!-- 事件修饰符： Vue.js 提供的一种功能，
+        用于在处理 DOM 事件时对事件处理函数进行特殊处理。
+        通过事件修饰符，你可以在事件触发时修改事件的默认行为或者应用特定的行为
+    -->
+
+    <!-- 常见的事件修饰符可以参考此链接：https://cn.vuejs.org/v2/api/#v-on -->
+
+    <div id="app">
+        <input type="button" @click="doIt('你好', 111)" value="点击">
+        <input type="'text" @keyup.enter="sayHi">       <!-- 此处，事件修饰符限定触发操作为回车键 -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                doIt: function(p1, p2) {        // 此处的p1和p2是形参，通过挂载处的@click事件传递进来
+                    console.log('Do It Now!')
+                    console.log('p1: ', p1)
+                    console.log('p2: ', p2)
+                },
+
+                sayHi: function() {
+                    alert('Hi!')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

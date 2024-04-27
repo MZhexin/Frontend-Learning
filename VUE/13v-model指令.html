@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13v-model指令</title>
+</head>
+<body>
+    <!-- v-model指令：获取和设置表单元素的值（双向数据绑定） -->
+
+    <div id="app">
+        <!-- 此处input输入框和vue实例中，data里的message变量双向绑定（同步更新）
+             1）当input输入框的值发生变化时，message变量的值也会跟着变化
+             2）当message变量的值发生变化时，input输入框的值也会跟着变化
+        -->
+        <input type="button" @click="setMessage" value="修改message变量">
+        <input type="text" v-model="message" @keyup.enter="getMessage">
+        <p>{{ message }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '世界第一大帅哥'
+            },
+            methods: {
+                getMessage: function() {
+                    alert(this.message)
+                },
+                setMessage: function() {
+                    this.message = '嘿嘿嘿'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
