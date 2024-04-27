@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11v-for指令</title>
+</head>
+<body>
+    <!-- v-for指令：根据数据生成列表结构 -->
+    <!-- 经常和数组结合使用 -->
+    <!-- 语法：v-for="(item, index) in 数据" -->
+    
+    <div id="app">
+        <ul>
+            <li v-for="(item, index) in arr">
+                index: {{ index }}&nbsp;&nbsp;&nbsp;&nbsp;item: {{ item }}
+            </li>
+            <br>
+            <li v-for="item in obj">
+                item.name: {{ item.name }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                arr: [1, 2, 3, 4, 5],
+                obj: [
+                    { name: '德川', age: 114 },
+                    { name: '我修院', age: 514 },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

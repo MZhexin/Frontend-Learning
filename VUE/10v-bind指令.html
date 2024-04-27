@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10v-bind指令</title>
+</head>
+<style>
+    .active {
+        border: 1px solid red;
+    }
+</style>
+<body>
+    <!-- v-bind指令：设置元素的属性（比如src、href、title等） -->
+    <!-- 语法：v-bind:属性名="表达式" -->
+    <!-- v-bind可以省略，即 :属性名="表达式" -->
+
+    <div id="app">
+        <!-- 示例 -->
+        <img v-bind:src="imgSrc" v-bind:title="imgTitle + '!!!'">
+        <br>
+        <!-- v-bind可以省略 -->
+
+        <!-- 动态绑定class：三目运算符或对象的写法 -->
+        <img :src="imgSrc" :class="isActive?'active':''" @click="toggleActive">      <!-- 三目运算符的写法 -->
+        <br>
+
+        <img :src="imgSrc" :class="{active: isActive}">     <!-- 对象的写法（更推荐） -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                imgSrc: 'King.jpg',
+                imgTitle: 'Billy Herrington',
+                isActive: false
+            },
+            methods: {
+                toggleActive: function(){
+                    this.isActive =!this.isActive
+                }
+            }
+        })
+    </script>
+</body>
+</html>
